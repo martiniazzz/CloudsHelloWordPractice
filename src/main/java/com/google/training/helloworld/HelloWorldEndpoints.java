@@ -5,6 +5,8 @@ import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiMethod.HttpMethod;
 import com.google.api.server.spi.config.Named;
 
+import java.util.Random;
+
 /**
  * Defines endpoint functions APIs.
  */
@@ -40,7 +42,8 @@ public class HelloWorldEndpoints {
     @ApiMethod(name ="greetBySayingSmthNice", path = "greetBySayingSmthNice", httpMethod = HttpMethod.GET)
 
     public HelloClass greetBySayingSmthNice(){
-        return new HelloClass();
+        Random r = new Random();
+        return new HelloClass(r.nextInt(3));
     }
 
 }

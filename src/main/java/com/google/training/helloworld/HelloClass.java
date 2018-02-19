@@ -10,14 +10,6 @@ public class HelloClass {
     private String smth2 = "Alright! you can deal with all your problems. Keep working ;)";
 
     public HelloClass (){
-        Random r = new Random();
-        int rand = r.nextInt(3);
-        if(rand == 0)
-            this.message = smth0;
-        else if(rand == 1)
-            this.message = smth1;
-        else
-            this.message = smth2;
     }
 
     public HelloClass (String name) {
@@ -30,5 +22,14 @@ public class HelloClass {
 
     public HelloClass(String name, String period){
         this.message = "Good " + period +" "+ name + "!";
+    }
+
+    public HelloClass(int rand){
+        if(rand == 0)
+            this.message = smth0;
+        else if(rand == 1)
+            this.message = smth1;
+        else
+            this.message = smth2;
     }
 }
