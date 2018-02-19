@@ -37,4 +37,10 @@ public class HelloWorldEndpoints {
         return new HelloClass(name,period);
     }
 
+    @ApiMethod(name ="greetBySayingSmthNice", path = "greetBySayingSmthNice", httpMethod = HttpMethod.GET)
+
+    public HelloClass greetBySayingSmthNice(){
+        return new HelloClass();
+    }
+
 }

@@ -56,6 +56,10 @@ function enableButtons () {
     btn = document.getElementById("input_greet_by_period");
     btn.onclick=function(){greetByPeriod();};
     btn.value="Click me for a period greeting";
+
+    btn = document.getElementById("say_smth_nice");
+    btn.onclick=function(){greetBySayingSmthNice();};
+    btn.value="Click me if u want to see some nice message :)";
 }
 
 /*
@@ -89,6 +93,11 @@ function greetByPeriod(){
     var period = document.getElementById("period_field").value;
     var name = document.getElementById("name_field").value;
     var request = gapi.client.helloworldendpoints.greetByPeriod({'name' : name, 'period': period});
+    request.execute(sayHelloCallback);
+}
+
+function greetBySayingSmthNice() {
+    var request = gapi.client.helloworldendpoints.greetBySayingSmthNice();
     request.execute(sayHelloCallback);
 }
 
